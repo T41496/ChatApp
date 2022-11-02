@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/scss/main.css">
+    <!-- link Font awesome -->
+    <script defer src="/fontawesome/js/all.js"></script>
+</head>
+<body>   
+     <%- include ("includes/banner-for-mobile") %>
+    <%- include ("includes/header") %>
+    <section id="create-room">
+        <form action="/create-room" method="POST">
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <input type="text" name="roomName" placeholder="Enter room name" required minlength="6">
+            <button type="submit" class="btn">Create</button>
+        </form>
+
+        <% if (hasResult) { %>
+            <div class="result-container">
+                <h2>Success!!!</h2>
+                <p>Room created successfully.</p>
+                <p>Your unique room ID:<span id="room-id"><%= ID %> </span></p>
+            </div>
+        <% } %>
+    </section> 
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+#delete-room{
+    padding:5rem 4rem;
+    h2{
+        font-size: var(--large-text);
+    }
+    .table-container{
+        width: 100%;
+    table{
+        width: 100%;
+        margin-top:2rem;
+        tr{
+            box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.25); 
+            td{
+                padding:2rem;
+                font-size: var(--medium-text);
+                text-align: center;
+             .fa-trash{
+                 color:red;
+                 cursor: pointer;
+                 font-size: 3rem;
+             }
+             button{
+                 border: none;
+                 outline: none;
+                 background: none;
+             }
+            }
+        }
+    }
+    }
+
+}

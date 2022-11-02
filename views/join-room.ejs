@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/scss/main.css">
+    <!-- link Font awesome -->
+    <script defer src="/fontawesome/js/all.js"></script>
+</head>
+<body>
+
+
+    <%- include ("includes/banner-for-mobile") %>
+    <%- include ("includes/header") %>
+    <section id="join-room">
+        <form action="/join-room" method="POST">
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+            <input type="text" name="roomID" placeholder="Enter room unique ID" <% if (hasError) { %> value="<%=oldValue.roomID%>" <% } %>required>
+            <button type="submit" class="btn">Join</button>
+        </form>
+        <div class="rules-container">
+            <h1>Rules:</h1>
+            <p>You must follow the rules strictly mentioned below whenever you are in room.</p>
+            <ul>
+                <li>Be kind and Courteous.</li>
+                <li>No hate speech or Bullying.</li>
+                <li>No Promotions or Spam.</li>
+                <li>Respect Everyone's Privacy.</li>
+            </ul>
+        </div>
+
+    </section> 
+    <!-- For Error -->
+    <% if(errorMessages.length>0){ %>
+        <div class="bottom-alert-container">
+            <% errorMessages.forEach(element=>{ %>
+                <div class="alert">
+                    <p class="message">
+                        <%= element %>
+                    </p>
+                    <button class="close-btn" onclick="this.parentNode.style.display='none'">
+                        X
+                    </button>
+                </div>
+
+                <%})%>
+        </div>
+        <% } %>
+</body>
+</html>

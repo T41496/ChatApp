@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= pageTitle %>
+    </title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/scss/main.css" />
+    <!-- link Font awesome -->
+    <script defer src="/fontawesome/js/all.js"></script>
+</head>
+
+<body>
+    
+    <%- include("includes/banner-for-mobile") %>
+
+    <%- include("includes/header") %>
+
+        <div class="container">
+            <section class="chat-container">
+                <aside class="sidebar">
+                    <div class="current-user">
+                        <div class="icon">
+                            <p><%= user.icon %> </p>
+                        </div>
+                        <div class="user-details">
+                            <h3><%=user.firstName%> <%= user.lastName%></h3>
+                            <p><%= user.email %> </p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="users-container">
+                        <h2>Active Users:</h2>
+                        <div class="users-list" id="users-list"></div>
+                    </div>
+                </aside>
+                <main class="chat-window">
+                    <div class="header">
+                        <!-- Room Details -->
+                        <div class="room-detail">
+                            <div class="icon">
+                                <p><%= room.name[0].toUpperCase()%></p>
+                            </div>
+                            <p class="room-name"><%= room.name %> </p>
+                            <div class="room-status"></div>
+                        </div>
+                        <div class="leave-room">
+                            <form action="/leave-room" method="POST">
+                            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                            <button type="submit"> <i class="fas fa-sign-out-alt"></i> Leave </button></form>
+                        </div>
+                    </div>
+                    <hr />
+                    <!-- Message Section -->
+                    <section class="message-section"></section>
+                    <footer>
+                        <hr />
+                        <div class="input-container">
+                            <input type="text" name="message" id="message" placeholder="Type your message..."/>
+                            <button id="send-btn"><i class="fas fa-paper-plane"></i>Send</button>
+                        </div>
+                    </footer>
+                </main>
+            </section>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/client.js"></script>
+</body>
+
+</html>

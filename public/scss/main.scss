@@ -1,0 +1,158 @@
+//Import fonts
+@import "fonts";
+
+//Import variables
+@import "variables";
+
+// Reset css default properties
+@import "reset";
+
+//Login Page
+@import "login";
+
+//Index page
+@import "index";
+
+//Create Room Page
+@import "createRoom";
+
+//Delete Room Page
+@import "deleteRoom";
+
+//Room
+@import "room";
+
+//Signup Page
+@import "signup";
+
+//Header
+@import "header";
+
+.btn{
+    display: block;
+    height:5rem;
+    font-size: var(--medium-text);
+    border-radius:4rem;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.25); 
+    }
+}
+
+.btn-login,.btn-signup{
+    color:white;
+    width:25rem;
+    background-color:var(--primary-color);
+    margin:3rem auto 0 auto;
+}
+.btn-join{
+    background-color: var(--primary-color);
+    height: 4.5rem;
+    width: 17rem;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.name{
+    font-family: Abhinav;
+    letter-spacing: 0.1rem;
+    color:var(--primary-color);
+    font-size: calc(var(--medium-text) + 2rem);
+    margin-left: 1rem;
+    font-weight: 400;
+    
+} 
+
+// For alerts
+  .bottom-alert-container{
+      position: absolute;
+      right:5rem;
+      bottom: 5rem;
+  }
+   .alert{
+     min-width:25rem;
+     height:3rem;
+     padding: 1rem;
+     font-size:var(--small-text);
+     margin:1rem 0;
+     color: #e81500;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.25);
+   }
+  .close-btn{
+    border:none;
+    outline:none;
+    background: #e81500;
+    color:white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+  
+  }
+
+  .not-found-message{
+      text-align: center;
+      font-size: var(--large-text);
+  }
+
+  .error {
+    text-align: center;
+    margin-top: 4rem;
+  }
+  
+  .error h1 {
+    font-size: 10rem;
+    color: red;
+    font-family: Poppins-Bold;
+  }
+  
+  .error .error-detail {
+    font-size: 5rem;
+  }
+  
+  .error p {
+    font-size: 2rem;
+  }
+
+
+  .banner-for-mobile{
+    display: none;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    text-align: center;
+    color:white;
+    padding:2rem 0;
+    z-index: 9;
+    h1{
+        margin-top: 5rem;
+        font-size: 4rem;
+    }
+    p{
+        font-size: 2rem;
+        margin:2rem;
+    }h3{
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width:900px){
+  html{
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+  }
+    .banner-for-mobile{
+        display: block;
+    }
+}

@@ -1,0 +1,34 @@
+header{
+    display: flex;
+    flex-direction: column;
+    min-height: 7rem;
+    box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.25); 
+    nav{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        flex: 1;
+        padding:0 4rem;
+        .logo{
+            cursor: pointer;
+            a{
+                text-decoration: none;
+            }
+        }
+
+        form{
+            button{
+                border:none;
+                outline:none;
+                background: none;
+                cursor: pointer;
+                .fa-sign-out-alt{
+                    font-size:3rem;
+                    color:var(--primary-color);
+                }
+            }
+        }
+
+        
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body>
+    <%- include ("../includes/banner-for-mobile") %>
+
+    <div class="login-form-container">
+        <div class="login-form">
+            <div class="login-header">
+                <h1>Welcome to <span class="name">;Gb]z</span></h1>
+                <!-- <div class="logo-container">
+                </div> -->
+            </div>
+            <div class="login-main">
+                <form action="/login" method="POST" name="login-form">
+                    <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                    <input type="email" name="email" placeholder="Email" <% if (hasErrors) { %> value="<%=oldValue.email%>" <% } %> required>
+                    <input type="password" name="password" id="password" placeholder="Password" <% if (hasErrors) { %> value="<%=oldValue.password%>" <% } %> required>
+                    <button type="submit" class="btn btn-login btn-center">Log In</button>
+                </form>
+            </div>
+            <div class="login-footer">
+                <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- For Error -->
+    <% if(errorMessages.length>0){ %>
+        <div class="bottom-alert-container">
+            <% errorMessages.forEach(element=>{ %>
+                <div class="alert">
+                    <p class="message">
+                        <%= element %>
+                    </p>
+                    <button class="close-btn" onclick="this.parentNode.style.display='none'">
+                        X
+                    </button>
+                </div>
+
+                <%})%>
+        </div>
+        <% } %>
+</body>
+
+</html>

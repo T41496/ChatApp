@@ -1,0 +1,52 @@
+section#create-room {
+  position: relative;
+  min-height: 90vh;
+  form {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 5rem;
+    transform: translateX(-50%);
+    input[type="text"] {
+      display: block;
+      width: 35rem;
+      height: 5rem;
+      font-size: 2rem;
+      border: none;
+      outline: none;
+      margin: 0 2rem;
+      padding: 0 2rem;
+      border-radius: 2rem;
+      box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.25);
+      flex-shrink: 2;
+    }
+    button[type="submit"] {
+      display: inline-block;
+      width: 15rem;
+      background-color: var(--primary-color);
+      color: white;
+      flex-shrink: 0;
+    }
+  }
+  .result-container{
+      position: absolute;
+      top:20rem;
+      left:50%;
+      transform: translateX(-50%);
+      width:50rem;
+      padding:1rem 0;
+      text-align: center;
+      border:1px solid rgb(55, 233, 55);
+      h2{
+          font-size: var(--medium-text);
+      }p{
+          font-size: var(--small-text);
+      }
+      #room-id{
+          font-weight: 600;
+      }
+  }
+}

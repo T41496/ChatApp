@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to SANDES</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/scss/main.css">
+    <!-- link Font awesome -->
+    <script defer src="/fontawesome/js/all.js"></script>
+</head>
+<body>
+    <%- include ("includes/banner-for-mobile") %>
+
+    <%- include ("./includes/header") %> 
+    <main class="menu-container">
+        <div class="menu-item">
+            <h2>Create Room</h2>
+            <div class="icon">
+                <i class="fas fa-plus"></i>
+            </div>
+            <a href="/create-room" class="btn btn-join">Create</a>
+        </div>
+
+        <div class="menu-item">
+            <h2>Join Room</h2>
+            <div class="icon">
+                <i class="fas fa-sign-in-alt"></i>
+            </div>
+            <a href="/join-room" class="btn btn-join">Join</a>
+        </div>
+
+        <div class="menu-item">
+            <h2>Delete Room</h2>
+            <div class="icon">
+                <i class="fas fa-trash"></i>
+            </div>
+            <a href="/delete-room" class="btn btn-join">Delete</a>
+        </div>
+    </main>
+</body>
+</html>

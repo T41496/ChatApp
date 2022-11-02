@@ -1,0 +1,101 @@
+main.menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin:2rem 4.5rem;
+    .menu-item{
+        position: relative;
+        width:22rem;
+        height:25rem;
+        padding:2rem 0;
+        margin:2rem;
+        box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.25); 
+        text-align: center;
+        h2{
+            font-size: var(--large-text);
+        }
+
+        .icon{
+            margin:2rem 0;
+            .fa-sign-in-alt,.fa-plus,.fa-trash{
+                font-size: 7rem;
+                color:var(--primary-color);
+            }
+            
+        }
+    
+        a{
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            bottom:2rem;
+            color:white;
+            line-height: 4.2rem;
+            text-decoration: none;
+        }
+    }
+}
+
+
+//Join Room Page
+section#join-room{
+    position: relative;
+    min-height: 90vh;
+    form{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left:50%;
+        top:5rem;
+        transform: translateX(-50%);
+        input[type="text"]{
+            display: block;
+            width:35rem;
+            height:5rem;
+            font-size: 2rem;
+            border:none;
+            outline:none;
+            margin:0 2rem;
+            padding:0 2rem;
+            border-radius: 2rem;
+            box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.25);
+            flex-shrink: 2;
+            }
+            button[type="submit"]{
+                display: inline-block;
+                width:15rem;
+                background-color:var(--primary-color);
+                color:white;
+                flex-shrink: 0;
+            
+            }
+    }
+    .rules-container{
+        width: 100%;
+        max-width: 90%;
+        position: absolute;
+        top:15rem;
+        left:7rem;
+        h1{
+            font-size: var(--large-text);
+            
+        }p{
+            
+            font-size: var(--medium-text);
+            margin:0.5rem 0;
+        }
+        ul{
+            li{
+                font-size: var(--small-text);
+                margin:1rem 0;
+            }
+        }
+    } 
+}
+
+@media only screen and (max-width:600px){
+    section#join-room form input[type="text"]{
+        width: 60%;
+    }
+}

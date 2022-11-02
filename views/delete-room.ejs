@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/scss/main.css">
+    <!-- link Font awesome -->
+    <script defer src="/fontawesome/js/all.js"></script>
+</head>
+<body>
+    <%- include ("includes/banner-for-mobile") %>
+
+    <%- include ("includes/header") %>
+    <section id="delete-room">
+        <% if (rooms.length>0) { %>
+            <h2>Your rooms:</h2>
+            <div class="table-container">
+            <table>
+                <tbody>
+                    <% rooms.forEach(room=>{ %> 
+                    <tr>
+                        <td><%= room.name %> </td>
+                        <td><%= room.ID %> </td>
+                        <td>
+                            <form action="/delete-room" method="POST">
+                                <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                                <input type="hidden" name="roomID" value="<%= room._id %> ">
+                                <button type="submit"><i class="fas fa-trash" title="Delete"></i></button>
+                            </form>   
+                        </td>
+                    </tr>
+                    <% }) %> 
+                </tbody>
+            </table>
+        </div>
+        <% }else{ %>
+            <h1 class="not-found-message">Please create room first!</h1>
+            <% } %> 
+    </section>
+
+
+
+<!-- For Error -->
+<% if(errorMessages.length>0){ %>
+    <div class="bottom-alert-container">
+        <% errorMessages.forEach(element=>{ %>
+            <div class="alert">
+                <p class="message">
+                    <%= element %>
+                </p>
+                <button class="close-btn" onclick="this.parentNode.style.display='none'">
+                    X
+                </button>
+            </div>
+
+            <%})%>
+    </div>
+    <% } %>
+</body>
+</html>
